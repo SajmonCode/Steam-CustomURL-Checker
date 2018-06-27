@@ -19,10 +19,14 @@ Register and setup STEAM Api key.
 const steam = new SteamAPI('XXXXXXXXXXXXXXXX');
 ```
 
-### Usage
+### Usage & Example
 
 ```sh
 $ node app.js -w 'your word'
+```
+
+```sh
+C:\Users\Example\Desktop\Steam ID Checker>node app.js -w hate
 
 [List of words & synonyms]
 - abhorrence     - abomination
