@@ -27,4 +27,4 @@ const wordsApiKey = 'XXXXXXXXXXXXXXXX';
 $ node app.js -w 'your word'
 ```
 
-/README.md>
+</README.md>
