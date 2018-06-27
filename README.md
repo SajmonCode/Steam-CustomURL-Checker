@@ -21,7 +21,8 @@ const steam = new SteamAPI('XXXXXXXXXXXXXXXX');
 const wordsApiKey = 'XXXXXXXXXXXXXXXX';
 ```
 
-How to use the console program.
+### Usage
+
 ```sh
 $ node app.js -w 'your word'
 ```
