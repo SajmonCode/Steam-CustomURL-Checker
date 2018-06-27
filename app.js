@@ -28,8 +28,7 @@ function checkWords(words) {
     if (i % 2 == 0) {
       stringOfWords += '\n'
     }
-    let spacing = 15 - words[i].length;
-    stringOfWords += '- ' + words[i] + ' '.repeat(spacing);
+    stringOfWords += '- ' + words[i] + ' '.repeat((15 - words[i].length));
   }
   console.log(stringOfWords);
   console.log('\n' + "\x1b[32m" + '[ Available Words ]' + "\x1b[0m");
