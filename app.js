@@ -23,20 +23,21 @@ let fetchedWords = tcom.search(argv.word);
 fetchedWords.synonyms.push(argv.word);
 
 function checkWords(words) {
+  const longestWordLength = Math.max(...(fetchedWords.synonyms.map(el => el.length)));
   let stringOfWords = '\n' + "\x1b[36m" + '[List of words & synonyms]' + "\x1b[0m";
   for (let i = 0; i < words.length; i++) {
     if (i % 2 == 0) {
       stringOfWords += '\n'
+    } else {
+      let spacing = (15 - words[i].length);
+      stringOfWords += '- ' + words[i] + ' '.repeat(spacing);
     }
-    stringOfWords += '- ' + words[i] + ' '.repeat((15 - words[i].length));
   }
-  console.log(stringOfWords);
-  console.log('\n' + "\x1b[32m" + '[ Available Words ]' + "\x1b[0m");
+  console.log(stringOfWords + '\n\n' + "\x1b[32m" + '[ Available Words ]' + "\x1b[0m");
   for (let i = 0; i < words.length; i++) {
-    const word = words[i];
-    steam.resolve(`https://steamcommunity.com/id/${word}`).then(id => {
+    steam.resolve(`https://steamcommunity.com/id/${words[i]}`).then(id => {
       if (id === undefined) {
-        console.log('- ' + word);
+        console.log('- ' + words[i]);
       }
     });
   }
