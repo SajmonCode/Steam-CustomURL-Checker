@@ -8,17 +8,15 @@ Install the following NodeJS packages.
 
 ```sh
 $ npm install yargs
-$ npm install axios
+$ npm install thesaurus-com
 $ npm install steamapi
 ```
 
-Register and setup these API-keys.
+Register and setup STEAM Api key.
 - https://steamcommunity.com/dev/apikey
-- https://www.wordsapi.com/
 
 ```javascript
 const steam = new SteamAPI('XXXXXXXXXXXXXXXX');
-const wordsApiKey = 'XXXXXXXXXXXXXXXX';
 ```
 
 ### Usage
