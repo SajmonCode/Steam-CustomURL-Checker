@@ -19,7 +19,7 @@ const argv = yargs
   .help()
   .alias('help', 'h').argv;
 
-const fetchedWords = tcom.search(argv.word);
+let fetchedWords = tcom.search(argv.word);
 fetchedWords.synonyms.push(argv.word);
 
 function checkWords(words) {
