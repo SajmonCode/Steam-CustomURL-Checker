@@ -4,7 +4,7 @@ const tcom = require('thesaurus-com');
 const SteamAPI = require('steamapi');
 
 /** API -- https://steamcommunity.com/dev/apikey */
-const steam = new SteamAPI('6689E7A1AB36A5D15E2A59E25C2EF4D9');
+const steam = new SteamAPI('XXXXXXXXXXXXXXXXXXXXXXXXX');
 
 /** Yargs configuration */
 const argv = yargs
