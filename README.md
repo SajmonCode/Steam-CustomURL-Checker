@@ -26,35 +26,26 @@ $ node app.js -w 'your word'
 ```
 
 ```sh
-C:\Users\Example\Desktop\Steam ID Checker>node app.js -w hate
-
+C:\Users\Example\Desktop\Steam ID Checker>node app.js -w love
 [List of words & synonyms]
-- abhorrence     - abomination
-- anathema       - animosity
-- animus         - antagonism
-- antipathy      - aversion
-- black beast    - bother
-- bugbear        - bête noire
-- detestation    - disgust
-- enmity         - execration
-- frost          - grievance
-- gripe          - hatred
-- horror         - hostility
-- ill will       - irritant
-- loathing       - malevolence
-- malignity      - mislike
-- nasty look     - no love lost
-- nuisance       - objection
-- odium          - pain
-- rancor         - rankling
-- repugnance     - repulsion
-- resentment     - revenge
-- revulsion      - scorn
-- spite          - trouble
-- venom          - hate
+- adulation      - affection      - allegiance
+- amity          - amorousness    - amour
+- appreciation   - ardency        - ardor
+- attachment     - case           - cherishing
+- crush          - delight        - devotedness
+- devotion       - emotion        - enchantment
+- enjoyment      - fervor         - fidelity
+- flame          - fondness       - friendship
+- hankering      - idolatry       - inclination
+- infatuation    - involvement    - like
+- lust           - mad for        - partiality
+- passion        - piety          - rapture
+- regard         - relish         - respect
+- sentiment      - soft spot      - taste
+- tenderness     - weakness       - worship
+- yearning       - zeal           - love
 
 [ Available Words ]
-- no love lost
-- mislike
-- rankling
+- adulation
+- devotedness
 ```
