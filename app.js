@@ -1,14 +1,10 @@
 /** Required packages */
 const yargs = require('yargs');
-const axios = require('axios');
+const tcom = require('thesaurus-com');
 const SteamAPI = require('steamapi');
 
-/** APIs and their keys
- * https://steamcommunity.com/dev/apikey
- * https://www.wordsapi.com/
- */
-const steam = new SteamAPI('XXXXXXXXXXX');
-const wordsApiKey = 'XXXXXXXXX';
+/** API -- https://steamcommunity.com/dev/apikey */
+const steam = new SteamAPI('6689E7A1AB36A5D15E2A59E25C2EF4D9');
 
 /** Yargs configuration */
 const argv = yargs
@@ -23,41 +19,19 @@ const argv = yargs
   .help()
   .alias('help', 'h').argv;
 
-/** Retrieve word from user input, search for synonyms,
- *  and call checkWords() to retrieve words and synonyms that are available for usage. */
-function getSynonyms(word) {
-  let encodedAddress = encodeURIComponent(word);
-  let url = `https://wordsapiv1.p.mashape.com/words/${encodedAddress}/synonyms`;
-
-  axios
-    .get(url, {
-      headers: {
-        'X-Mashape-Key': wordsApiKey
-      }
-    })
-    .then(res => {
-      if (res.data.status === 400) throw new Error('Your request is invalid.');
-      else {
-        let words = res.data.synonyms;
-        words.push(word);
-        checkWords(words);
-      }
-    })
-    .catch(err => {
-      console.log(err.message);
-    });
-}
+const fetchedWords = tcom.search(argv.word);
 
 function checkWords(words) {
   console.log(words);
-  console.log('\n Available Words:');
-  words.forEach(element => {
-    steam.resolve(`https://steamcommunity.com/id/${element}`).then(id => {
+  console.log('\n Available Words: ');
+  for (let i = 0; i < words.length; i++) {
+    const word = words[i];
+    steam.resolve(`https://steamcommunity.com/id/${word}`).then(id => {
       if (id === undefined) {
-        console.log('- ' + element);
+        console.log('- ' + word);
       }
     });
-  });
+  }
 }
 
-getSynonyms(argv.word);
+checkWords(fetchedWords.synonyms);
