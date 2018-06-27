@@ -26,12 +26,11 @@ function checkWords(words) {
   const longestWordLength = Math.max(...(fetchedWords.synonyms.map(el => el.length)));
   let stringOfWords = '\n' + "\x1b[36m" + '[List of words & synonyms]' + "\x1b[0m";
   for (let i = 0; i < words.length; i++) {
-    if (i % 2 == 0) {
+    if (i % 3 == 0) {
       stringOfWords += '\n'
-    } else {
-      let spacing = (15 - words[i].length);
-      stringOfWords += '- ' + words[i] + ' '.repeat(spacing);
     }
+    let spacing = (15 - words[i].length);
+    stringOfWords += '- ' + words[i] + ' '.repeat(spacing);
   }
   console.log(stringOfWords + '\n\n' + "\x1b[32m" + '[ Available Words ]' + "\x1b[0m");
   for (let i = 0; i < words.length; i++) {
