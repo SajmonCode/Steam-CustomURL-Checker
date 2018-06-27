@@ -13,6 +13,8 @@ $ npm install steamapi
 ```
 
 Register and setup these API-keys.
+- https://steamcommunity.com/dev/apikey
+- https://www.wordsapi.com/
 
 ```javascript
 const steam = new SteamAPI('XXXXXXXXXXXXXXXX');
