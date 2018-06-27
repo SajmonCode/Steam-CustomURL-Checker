@@ -4,7 +4,7 @@ const tcom = require('thesaurus-com');
 const SteamAPI = require('steamapi');
 
 /** API -- https://steamcommunity.com/dev/apikey */
-const steam = new SteamAPI('XXXXXXXXXXXXXXXXXXXXXXXXX');
+const steam = new SteamAPI('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX');
 
 /** Yargs configuration */
 const argv = yargs
@@ -23,7 +23,7 @@ const fetchedWords = tcom.search(argv.word);
 fetchedWords.synonyms.push(argv.word);
 
 function checkWords(words) {
-  let stringOfWords = 'List of words & synonyms:';
+  let stringOfWords = '\n[ List of words & synonyms ]';
   for (let i = 0; i < words.length; i++) {
     if (i % 2 == 0) {
       stringOfWords += '\n'
@@ -32,7 +32,7 @@ function checkWords(words) {
     stringOfWords += '- ' + words[i] + ' '.repeat(spacing);
   }
   console.log(stringOfWords);
-  console.log('\n Available Words: ');
+  console.log('\n[ Available Words ]');
   for (let i = 0; i < words.length; i++) {
     const word = words[i];
     steam.resolve(`https://steamcommunity.com/id/${word}`).then(id => {
